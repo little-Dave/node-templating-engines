@@ -2,13 +2,15 @@ const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
+const handlebars = require('express-handlebars');
 
 const app = express();
 
 const adminData = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
-app.set("view engine", "pug"); 
+app.engine('handlebars', handlebars());
+app.set("view engine", "handlebars"); 
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
