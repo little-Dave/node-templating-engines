@@ -9,7 +9,11 @@ const app = express();
 const adminData = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
-app.engine('handlebars', handlebars({layoutsDir: "/views/layouts/", defaultLayout: "main-layout"}));
+app.engine('handlebars', handlebars({
+    layoutsDir: "views/layouts/", 
+    defaultLayout: "main-layout",
+    extname: "handlebars"
+}));
 app.set("view engine", "handlebars"); 
 
 app.use(bodyParser.urlencoded({extended: false}));
