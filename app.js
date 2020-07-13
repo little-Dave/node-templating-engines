@@ -2,19 +2,21 @@ const path = require('path');
 
 const express = require('express');
 const bodyParser = require('body-parser');
-const handlebars = require('express-handlebars');
+// const handlebars = require('express-handlebars');
 
 const app = express();
 
 const adminData = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
 
-app.engine('handlebars', handlebars({
-    layoutsDir: "views/layouts/", 
-    defaultLayout: "main-layout",
-    extname: "handlebars"
-}));
-app.set("view engine", "handlebars"); 
+// app.engine('handlebars', handlebars({
+//     layoutsDir: "views/layouts/", 
+//     defaultLayout: "main-layout",
+//     extname: "handlebars"
+// }));
+// app.set("view engine", "handlebars"); 
+// app.set("view engine", "pug"); 
+app.set("view engine", "ejs"); 
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(express.static(path.join(__dirname, 'public')));
