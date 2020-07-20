@@ -8,7 +8,7 @@ const app = express();
 
 const adminRoutes = require('./routes/admin');
 const shopRoutes = require('./routes/shop');
-const pageNotFoundController = require('./controllers/404');
+const error = require('./controllers/errors');
 
 // app.engine('handlebars', handlebars({
 //     layoutsDir: "views/layouts/", 
@@ -25,6 +25,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/admin', adminRoutes);
 app.use(shopRoutes);
 
-app.use(pageNotFoundController);
+app.use(error.get404);
  
 app.listen(3000);
