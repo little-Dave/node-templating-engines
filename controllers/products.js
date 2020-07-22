@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 const Product = require('../models/product');
 
 exports.getAddProduct = (req, res, next) => {

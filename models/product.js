@@ -1,12 +1,14 @@
+const fs = require('fs');
+const path = require('path');
 const products = [];
-
 module.exports = class Product {
   constructor(title){
     this.title = title;
   }
 
   save() {
-    products.push(this);
+    const productsDataPath = path.join(__dirname, "../", "data", "products.json");
+    console.log(productsDataPath);
   }
 
   static fetchAll() {
