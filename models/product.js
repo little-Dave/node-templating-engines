@@ -2,6 +2,7 @@ const fs = require('fs');
 const path = require('path');
 
 const productsDataPath = path.join(__dirname, "../", "data", "products.json");
+
 const getProductsFromFile = (callback) => {
   fs.readFile(productsDataPath, (err, fileContent) => {
     err ? 
