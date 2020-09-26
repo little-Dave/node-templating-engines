@@ -12,3 +12,16 @@ exports.getProducts = (req, res, next) => {
     });
   });
 }
+
+exports.getIndex = (req, res, next) => {
+  Product.fetchAll(products => {
+    res.render("shop/index", {
+      products: products, 
+      docTitle: "Shop", 
+      path: "/",
+      hasProducts: !!(products.length),
+      shop: true,
+      productCSS: true
+    });
+  });
+}
