@@ -5,7 +5,7 @@ exports.getProducts = (req, res, next) => {
     res.render("shop/product-list", {
       products: products, 
       docTitle: "All Products", 
-      path: "/products"
+      path: "/admin/products"
       // hasProducts: !!(products.length),
       // shop: true,
       // productCSS: true
