@@ -5,7 +5,7 @@ exports.getProducts = (req, res, next) => {
     res.render("shop/product-list", {
       products: products, 
       docTitle: "All Products", 
-      path: "/admin/products"
+      path: "/products"
       // hasProducts: !!(products.length),
       // shop: true,
       // productCSS: true
@@ -34,7 +34,7 @@ exports.getCart = (req, res, next) => {
 }
 
 exports.getCheckout = (req, res, next) => {
-  res.render("shop/checkout"), {
+  res.render("shop/checkout", {
     path: "/checkout",
     docTitle: "Checkout"
   })

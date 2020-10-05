@@ -22,4 +22,5 @@ exports.getProducts = (req, res, next) => {
       docTitle: "Admin Products", 
       path: "/admin/products"
     });
+  });
 }
